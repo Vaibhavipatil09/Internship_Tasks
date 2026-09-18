@@ -1,108 +1,70 @@
-# **Problem Statement:**
-The real estate industry faces challenges in accurately predicting the sales prices of residential properties, impacting the ability of homebuyers and sellers to make well-informed decisions. To address this issue, a predictive modeling task has been defined wherein the goal is to forecast the sales price for each house in the test set. The evaluation metric for this task is the Root-Mean-Squared-Error (RMSE), calculated between the logarithm of the predicted value and the logarithm of the observed sales price. This approach is chosen to ensure that errors in predicting both expensive and inexpensive houses contribute equally to the evaluation, providing a fair assessment of the model's performance across the entire price spectrum.
+<div style="font-family: 'Arial', sans-serif; max-width: 90%; margin: 0 auto; text-align: justify; line-height: 1.6; background: linear-gradient(to bottom, #394240, #1C1F29); padding: 20px; border-radius: 15px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); color: #D2C9B8;">
 
-**Objective:**
-The primary objective of this project is to develop a robust predictive model that accurately estimates the sales prices of houses. The specific goals and objectives are as follows:
+  <div style="text-align: center; margin-bottom: 20px;">
+    <h2 style="color: #E4D8B4; font-size: 28px; border-bottom: 2px solid #E4D8B4; padding-bottom: 10px;">Clustering Algorithms</h2>
+  </div>
 
-1. **Prediction Accuracy:** Develop a model that can predict the sales prices of houses with a high degree of accuracy. The use of RMSE ensures that the model is effective across a range of house prices, minimizing the impact of errors in predictions for both high-value and low-value properties.
+  <div style="margin-bottom: 20px;">
+    <p style="margin-bottom: 10px;">Clustering algorithms are powerful tools in machine learning for grouping similar data points together. In this study, we will explore four popular clustering algorithms: K-means, Hierarchical, DBSCAN, and Affinity Propagation.</p>
+  </div>
 
-2. **Logarithmic Transformation:** Implement a logarithmic transformation on both the predicted and observed sales prices. This transformation ensures that the model's performance is evaluated in a manner where errors in predicting prices at different ends of the spectrum are treated equally, enhancing the fairness of the evaluation process.
+  <div style="margin-bottom: 20px;">
+    <h3 style="font-size: 24px; border-bottom: 2px solid #E4D8B4; padding-bottom: 10px;">K-means Clustering</h3>
+    <p style="margin-bottom: 10px;">K-means is an iterative algorithm that partitions data into K distinct clusters based on the proximity of data points to the cluster centroids. It aims to minimize the within-cluster sum of squares. K-means is computationally efficient and works well when clusters are well-separated and of similar size. It requires specifying the number of clusters in advance.</p>
+  </div>
 
-3. **Generalization:** Train the predictive model on a diverse dataset and validate its performance on a test set. The goal is to ensure that the model generalizes well to unseen data, providing reliable predictions for a variety of houses with different features and price points.
+  <div style="margin-bottom: 20px;">
+    <h3 style="font-size: 24px; border-bottom: 2px solid #E4D8B4; padding-bottom: 10px;">Hierarchical Clustering</h3>
+    <p style="margin-bottom: 10px;">Hierarchical clustering builds a hierarchy of clusters by iteratively merging or splitting existing clusters based on their similarity. It can be agglomerative (bottom-up) or divisive (top-down). Hierarchical clustering does not require specifying the number of clusters in advance and provides a dendrogram to visualize the clustering hierarchy.</p>
+  </div>
 
-4. **Model Robustness:** Build a model that is robust to variations in the real estate market, including fluctuations in housing prices and changes in demand. The goal is to create a model that maintains its accuracy and reliability over time.
+  <div style="margin-bottom: 20px;">
+    <h3 style="font-size: 24px; border-bottom: 2px solid #E4D8B4; padding-bottom: 10px;">DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</h3>
+    <p style="margin-bottom: 10px;">DBSCAN is a density-based clustering algorithm that groups together data points based on their density. It defines clusters as dense regions separated by sparser areas. DBSCAN can discover clusters of arbitrary shapes, handle noisy data, and does not require specifying the number of clusters in advance. It classifies points as core, border, or noise based on density and connectivity.</p>
+  </div>
 
-5. **Interpretability:** Develop a model that allows for interpretation of results, enabling stakeholders to understand the factors influencing the predicted sales prices. This transparency is essential for building trust in the model's predictions.
+  <div style="text-align: center; margin-bottom: 20px;">
+    <h2 style="color: #E4D8B4; font-size: 28px; border-bottom: 2px solid #E4D8B4; padding-bottom: 10px;">The Dataset</h2>
+  </div>
 
-6. **Submission Requirement:** Generate predictions for each house in the test set and submit the results in a format that includes the predicted values for the SalePrice variable. The submission will be evaluated based on the RMSE metric, reflecting the accuracy of the model's predictions compared to the actual sales prices.
+  <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+    <thead>
+      <tr style="background-color: #4CAF50; color: white;">
+        <th style="padding: 10px; border: 1px solid #ddd;">Column</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">CustomerID</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">An identifier for each customer.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Gender</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Indicates the gender of the customer (Male or Female).</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Age</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Represents the age of the customer in years.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Annual Income (k$)</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Denotes the annual income of the customer in thousands of dollars.</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Spending Score (1–100)</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">A score ranging from 1 to 100 that quantifies the customer’s spending habits and preferences. A higher score indicates a higher tendency to spend.</td>
+      </tr>
+    </tbody>
+  </table>
 
-**Data Description:-**
+  <div style="text-align: center;">
+    <p style="margin-bottom: 10px;">
+      Explore the dataset on Kaggle
+      <a href="https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python" target="_blank" style="text-decoration: none; color: #007BFF; margin-left: 5px;">
+        🌐 View Dataset
+      </a>
+    </p>
+  </div>
 
-| Feature       | Description                                                                                                                                               |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MSSubClass    | Identifies the type of dwelling involved in the sale.                                                                                                       |
-| MSZoning      | Identifies the general zoning classification of the sale.                                                                                                  |
-| LotFrontage   | Linear feet of street connected to property.                                                                                                                |
-| LotArea       | Lot size in square feet.                                                                                                                                   |
-| Street        | Type of road access to property (Gravel or Paved).                                                                                                          |
-| Alley         | Type of alley access to property (Gravel, Paved, or No alley access).                                                                                        |
-| LotShape      | General shape of property (Regular, Slightly irregular, Moderately Irregular, Irregular).                                                                   |
-| LandContour   | Flatness of the property (Near Flat/Level, Banked, Hillside, Depression).                                                                                     |
-| Utilities     | Type of utilities available (All public, Electricity, Gas, and Water, Electricity and Gas Only, Electricity only).                                            |
-| LotConfig     | Lot configuration (Inside, Corner, Cul-de-sac, Frontage on 2 sides, Frontage on 3 sides).                                                                    |
-| LandSlope     | Slope of property (Gentle slope, Moderate Slope, Severe Slope).                                                                                              |
-| Neighborhood  | Physical locations within Ames city limits.                                                                                                                |
-| Condition1    | Proximity to various conditions (Artery, Feedr, Norm, RRNn, RRAn, PosN, PosA, RRNe, RRAe).                                                                  |
-| Condition2    | Proximity to various conditions (if more than one is present).                                                                                              |
-| BldgType      | Type of dwelling (Single-family Detached, Two-family Conversion, Duplex, Townhouse End Unit, Townhouse Inside Unit).                                         |
-| HouseStyle    | Style of dwelling (One story, One and one-half story, Two story, Split Foyer, Split Level, etc.).                                                           |
-| OverallQual   | Rates the overall material and finish of the house (Very Excellent to Very Poor).                                                                           |
-| OverallCond   | Rates the overall condition of the house (Very Excellent to Very Poor).                                                                                      |
-| YearBuilt     | Original construction date.                                                                                                                                |
-| YearRemodAdd  | Remodel date (same as construction date if no remodeling or additions).                                                                                     |
-| RoofStyle     | Type of roof (Flat, Gable, Gambrel, Hip, Mansard, Shed).                                                                                                    |
-| RoofMatl      | Roof material (Clay or Tile, Standard Shingle, Membrane, Metal, Roll, Gravel & Tar, Wood Shakes, Wood Shingles).                                             |
-| Exterior1st   | Exterior covering on house (Asbestos Shingles, Brick, Cement Board, Metal Siding, etc.).                                                                    |
-| Exterior2nd   | Exterior covering on house (if more than one material).                                                                                                     |
-| MasVnrType    | Masonry veneer type (Brick Common, Brick Face, Cinder Block, None, Stone).                                                                                  |
-| MasVnrArea    | Masonry veneer area in square feet.                                                                                                                        |
-| ExterQual     | Quality of material on the exterior (Excellent, Good, Average/Typical, Fair, Poor).                                                                         |
-| ExterCond     | Present condition of material on the exterior (Excellent, Good, Average/Typical, Fair, Poor).                                                               |
-| Foundation    | Type of foundation (Brick & Tile, Cinder Block, Poured Concrete, Slab, Stone, Wood).                                                                        |
-| BsmtQual      | Height of the basement (Excellent, Good, Typical, Fair, Poor, No Basement).                                                                                 |
-| BsmtCond      | General condition of the basement (Excellent, Good, Typical, Fair, Poor, No Basement).                                                                      |
-| BsmtExposure  | Walkout or garden level walls (Good, Average, Minimum, No Exposure, No Basement).                                                                          |
-| BsmtFinType1  | Rating of basement finished area (Good Living Quarters, Average Living Quarters, Below Average Living Quarters, etc.).                                      |
-| BsmtFinSF1    | Type 1 finished square feet.                                                                                                                                 |
-| BsmtFinType2  | Rating of basement finished area (if multiple types).                                                                                                      |
-| BsmtFinSF2    | Type 2 finished square feet.                                                                                                                                 |
-| BsmtUnfSF     | Unfinished square feet of basement area.                                                                                                                    |
-| TotalBsmtSF   | Total square feet of basement area.                                                                                                                         |
-| Heating       | Type of heating (Floor Furnace, Gas Forced Warm Air Furnace, Gas Hot Water or Steam Heat, etc.).                                                            |
-| HeatingQC     | Heating quality and condition (Excellent, Good, Average/Typical, Fair, Poor).                                                                              |
-| CentralAir    | Central air conditioning (Yes or No).                                                                                                                      |
-| Electrical    | Electrical system (Standard Circuit Breakers & Romex, Fuse Box over 60 AMP, etc.).                                                                         |
-| 1stFlrSF      | First floor square feet.                                                                                                                                   |
-| 2ndFlrSF      | Second floor square feet.                                                                                                                                  |
-| LowQualFinSF  | Low-quality finished square feet (all floors).                                                                                                             |
-| GrLivArea     | Above grade living area square feet.                                                                                                                       |
-| BsmtFullBath  | Basement full bathrooms.                                                                                                                                   |
-| BsmtHalfBath  | Basement half bathrooms.                                                                                                                                   |
-| FullBath      | Full bathrooms above grade.                                                                                                                                |
-| HalfBath      | Half baths above grade.                                                                                                                                    |
-| Bedroom       | Bedrooms above grade (does NOT include basement bedrooms).                                                                                                  |
-| Kitchen       | Kitchens above grade.                                                                                                                                     |
-| KitchenQual   | Kitchen quality (Excellent, Good, Typical/Average, Fair, Poor).                                                                                            |
-| TotRmsAbvGrd  | Total rooms above grade (does not include bathrooms).                                                                                                      |
-| Functional    | Home functionality (Typical, Minor Deductions 1 and 2, Moderate Deductions, Major Deductions 1 and 2, Severely Damaged, Salvage only).                      |
-| Fireplaces    | Number of fireplaces.                                                                                                                                     |
-| FireplaceQu   | Fireplace quality (Excellent, Good, Average, Fair, Poor, No Fireplace).                                                                                    |
-| GarageType    | Garage location (More than one type, Attached, Basement, Built-In, Car Port, Detached, No Garage).                                                         |
-| GarageYrBlt   | Year the garage was built.                                                                                                                                 |
-| GarageFinish  | Interior finish of the garage (Finished, Rough Finished, Unfinished, No Garage).                                                                            |
-| GarageCars    | Size of garage in car capacity.                                                                                                                            |
-| GarageArea    | Size of garage in square feet.                                                                                                                             |
-| GarageQual    | Garage quality (Excellent, Good, Typical/Average, Fair, Poor, No Garage).                                                                                   |
-| GarageCond    | Garage condition (Excellent, Good, Typical/Average, Fair, Poor, No Garage).                                                                                 |
-| PavedDrive    | Paved driveway (Paved, Partial Pavement, Dirt/Gravel).                                                                                                     |
-| WoodDeckSF    | Wood deck area in square feet.                                                                                                                             |
-| OpenPorchSF   | Open porch area in square feet.                                                                                                                            |
-| EnclosedPorch | Enclosed porch area in square feet.                                                                                                                        |
-| 3SsnPorch     | Three-season porch area in square feet.                                                                                                                    |
-| ScreenPorch   | Screen porch area in square feet.                                                                                                                          |
-| PoolArea      | Pool area in square feet.                                                                                                                                  |
-| PoolQC        | Pool quality (Excellent, Good, Average/Typical, Fair, No Pool).                                                                                             |
-| Fence         | Fence quality (Good Privacy, Minimum Privacy, Good Wood, Minimum Wood/Wire, No Fence).                                                                     |
-| MiscFeature   | Miscellaneous feature not covered in other categories (Elevator, 2nd Garage, Other, Shed, Tennis Court, None).                                             |
-| MiscVal       | Value of miscellaneous feature in dollars.                                                                                                                |
-| MoSold        | Month Sold (MM).                                                                                                                                         |
-| YrSold        | Year Sold (YYYY).                                                                                                                                        |
-| SaleType      | Type of sale (Warranty Deed - Conventional, Warranty Deed - Cash, Warranty Deed - VA Loan, etc.).                                                          |
-| SaleCondition | Condition of sale (Normal Sale, Abnormal Sale, Adjoining Land Purchase, Allocation, Sale between family members, Home was not completed, etc.).             |
-
-This table provides a detailed overview of each feature in the dataset, describing the type of information it represents and the possible values it can take.
-## Project Name: House Prices: Advanced Regression Techniques
-
-- ### The main aim of this project is to predict the house price based on various features which we will discuss as we go ahead
-- ### Dataset to downloaded from the below link
-https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+</div>
